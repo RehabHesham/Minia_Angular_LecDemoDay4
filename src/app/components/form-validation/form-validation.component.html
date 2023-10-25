@@ -1,0 +1,35 @@
+<form class="row g-3">
+    <div class="col-md-4">
+      <label for="name" class="form-label">Student Name</label>
+      <input type="text" class="form-control" [ngClass]="{
+        'is-valid': isValidName(),
+        'is-invalid': !isValidName()
+      }" id="name" [(ngModel)]="stdName" name="name" required>
+      <div class="valid-feedback">
+        Looks good! 
+      </div>
+      <div class="invalid-feedback">
+        Something looks wrong! <br>
+        Name is required and must contain more than 3 letters   
+    </div>
+    </div>
+    <div class="col-md-4">
+      <label for="age" class="form-label">Student Age</label>
+      <input type="number" class="form-control" 
+      [ngClass]="{
+        'is-valid': isValidAge,
+        'is-invalid': !isValidAge
+      }"
+      id="age" [(ngModel)]="stdAge" name="age"  required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Something looks wrong! <br>
+        Age must be between 18 and 35    
+    </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>

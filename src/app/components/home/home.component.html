@@ -1,0 +1,14 @@
+<p>home works!</p>
+
+
+<h2>From Parent to Child</h2>
+Data to send: {{parentVariable}}
+<app-child [childVariable]="parentVariable"   (childtoParent)="getColor($event)"></app-child>
+
+<hr>
+
+<h2>From Child To Parent</h2>
+
+
+<p>Data From Child: {{dataFromChild}}</p>
+<app-child2 (myEvent)="getData($event)"     [color]="child1Color"></app-child2>

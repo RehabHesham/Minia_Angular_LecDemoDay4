@@ -1,0 +1,41 @@
+<p>attribute-directives works!</p>
+
+
+<p>class binding</p>
+<input type="checkbox" name="apply" [(ngModel)]="applyClass">
+
+<div class="text-center" [class.CustomBg]="applyClass">
+    <h1>Welcome</h1>
+</div>
+<hr>
+<p>ngclass</p>
+<div [ngClass]="{
+    CustomBg : applyClass,
+    RedBg: !applyClass,
+    'text-center': color == 'Red'
+}">
+    <h2>To Our App</h2>
+</div>
+<hr>
+<select name="color" [(ngModel)]="color">
+    <option value="red" selected>Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>   
+</select>
+<p>style binding</p>
+<div [style.backgroundColor]="color">
+    <h1>Welcome</h1>
+</div>
+
+<hr>
+<select name="color" [(ngModel)]="foreColor">
+    <option value="black" >black</option>
+    <option value="white" selected>White</option> 
+</select>
+<p>ngStyle</p>
+<div [ngStyle]="{
+    backgroundColor: color,
+    color: foreColor
+}">
+    <h2>To Our App</h2>
+</div>
